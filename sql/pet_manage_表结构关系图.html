@@ -1,0 +1,186 @@
+<html style="margin:0;padding:0;">
+<div style="width:100%;box-sizing:border-box;background:#f6f8fb;padding:16px;font-family:'PingFang SC','Microsoft YaHei',system-ui,sans-serif;">
+<div style="font-size:18px;font-weight:700;color:#2c4763;margin-bottom:2px;">宠物管理系统 pet_manage 数据库表结构关系（示意）</div>
+<div style="font-size:13px;color:#8a94a6;margin-bottom:10px;">依据 MySQL Workbench 截图还原：7 张表、全部字段与 2 条外键关联</div>
+<svg viewBox="0 0 1000 800" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei',system-ui,sans-serif">
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#547899"/></marker></defs>
+<line x1="190" y1="206" x2="190" y2="247" stroke="#547899" stroke-width="2" marker-end="url(#arr)"/>
+<text x="190" y="228" text-anchor="middle" font-size="12" fill="#547899">owner.user_id → user.user_id　1:1</text>
+<line x1="190" y1="416" x2="190" y2="457" stroke="#547899" stroke-width="2" marker-end="url(#arr)"/>
+<text x="190" y="438" text-anchor="middle" font-size="12" fill="#547899">pet.owner_id → owner.owner_id　1:n</text>
+<rect x="43" y="43" width="300" height="168" rx="10" fill="#e3e9f0"/>
+<rect x="40" y="40" width="300" height="168" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="40" y="40" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="40" y="68" width="300" height="10" fill="#547899"/>
+<text x="54" y="65" font-size="15" font-weight="700" fill="#ffffff">user　用户表</text>
+<line x1="40" y1="78" x2="340" y2="78" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="96" font-size="13" fill="#1f2937">user_id</text>
+<text x="328" y="96" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="110.4" y="84" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="123.4" y="95" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="41" y="104" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="104" x2="340" y2="104" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="122" font-size="13" fill="#1f2937">username</text>
+<text x="328" y="122" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<rect x="117.6" y="110" width="26" height="15" rx="4" fill="#16a34a"/>
+<text x="130.6" y="121" font-size="10" text-anchor="middle" fill="#ffffff">UQ</text>
+<line x1="40" y1="130" x2="340" y2="130" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="148" font-size="13" fill="#1f2937">password</text>
+<text x="328" y="148" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(50)</text>
+<rect x="41" y="156" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="156" x2="340" y2="156" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="174" font-size="13" fill="#1f2937">role</text>
+<text x="328" y="174" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(10)</text>
+<line x1="40" y1="182" x2="340" y2="182" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="200" font-size="13" fill="#1f2937">phone</text>
+<text x="328" y="200" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<rect x="43" y="253" width="300" height="168" rx="10" fill="#e3e9f0"/>
+<rect x="40" y="250" width="300" height="168" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="40" y="250" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="40" y="278" width="300" height="10" fill="#547899"/>
+<text x="54" y="275" font-size="15" font-weight="700" fill="#ffffff">owner　主人表</text>
+<line x1="40" y1="288" x2="340" y2="288" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="306" font-size="13" fill="#1f2937">owner_id</text>
+<text x="328" y="306" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="117.6" y="294" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="130.6" y="305" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="41" y="314" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="314" x2="340" y2="314" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="332" font-size="13" fill="#1f2937">real_name</text>
+<text x="328" y="332" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<line x1="40" y1="340" x2="340" y2="340" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="358" font-size="13" fill="#1f2937">phone</text>
+<text x="328" y="358" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<rect x="41" y="366" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="366" x2="340" y2="366" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="384" font-size="13" fill="#1f2937">address</text>
+<text x="328" y="384" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(100)</text>
+<line x1="40" y1="392" x2="340" y2="392" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="410" font-size="13" fill="#1f2937">user_id</text>
+<text x="328" y="410" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="110.4" y="398" width="26" height="15" rx="4" fill="#d97706"/>
+<text x="123.4" y="409" font-size="10" text-anchor="middle" fill="#ffffff">FK</text>
+<rect x="43" y="463" width="300" height="220" rx="10" fill="#e3e9f0"/>
+<rect x="40" y="460" width="300" height="220" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="40" y="460" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="40" y="488" width="300" height="10" fill="#547899"/>
+<text x="54" y="485" font-size="15" font-weight="700" fill="#ffffff">pet　宠物表</text>
+<line x1="40" y1="498" x2="340" y2="498" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="516" font-size="13" fill="#1f2937">pet_id</text>
+<text x="328" y="516" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="103.2" y="504" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="116.2" y="515" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="41" y="524" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="524" x2="340" y2="524" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="542" font-size="13" fill="#1f2937">pet_name</text>
+<text x="328" y="542" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<line x1="40" y1="550" x2="340" y2="550" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="568" font-size="13" fill="#1f2937">variety</text>
+<text x="328" y="568" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<rect x="41" y="576" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="576" x2="340" y2="576" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="594" font-size="13" fill="#1f2937">age</text>
+<text x="328" y="594" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<line x1="40" y1="602" x2="340" y2="602" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="620" font-size="13" fill="#1f2937">gender</text>
+<text x="328" y="620" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(4)</text>
+<rect x="41" y="628" width="298" height="26" fill="#f2f6fa"/>
+<line x1="40" y1="628" x2="340" y2="628" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="646" font-size="13" fill="#1f2937">health</text>
+<text x="328" y="646" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(50)</text>
+<line x1="40" y1="654" x2="340" y2="654" stroke="#e3e9f0" stroke-width="1"/>
+<text x="52" y="672" font-size="13" fill="#1f2937">owner_id</text>
+<text x="328" y="672" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="117.6" y="660" width="26" height="15" rx="4" fill="#d97706"/>
+<text x="130.6" y="671" font-size="10" text-anchor="middle" fill="#ffffff">FK</text>
+<rect x="623" y="43" width="300" height="142" rx="10" fill="#e3e9f0"/>
+<rect x="620" y="40" width="300" height="142" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="620" y="40" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="620" y="68" width="300" height="10" fill="#547899"/>
+<text x="634" y="65" font-size="15" font-weight="700" fill="#ffffff">pet_service　服务项目表</text>
+<line x1="620" y1="78" x2="920" y2="78" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="96" font-size="13" fill="#1f2937">id</text>
+<text x="908" y="96" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="654.4" y="84" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="667.4" y="95" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="621" y="104" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="104" x2="920" y2="104" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="122" font-size="13" fill="#1f2937">service_name</text>
+<text x="908" y="122" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(30)</text>
+<line x1="620" y1="130" x2="920" y2="130" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="148" font-size="13" fill="#1f2937">price</text>
+<text x="908" y="148" font-size="12" text-anchor="end" fill="#8a94a6">DECIMAL(8,2)</text>
+<rect x="621" y="156" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="156" x2="920" y2="156" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="174" font-size="13" fill="#1f2937">description</text>
+<text x="908" y="174" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(200)</text>
+<rect x="623" y="227" width="300" height="168" rx="10" fill="#e3e9f0"/>
+<rect x="620" y="224" width="300" height="168" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="620" y="224" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="620" y="252" width="300" height="10" fill="#547899"/>
+<text x="634" y="249" font-size="15" font-weight="700" fill="#ffffff">reserve　预约记录表</text>
+<line x1="620" y1="262" x2="920" y2="262" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="280" font-size="13" fill="#1f2937">id</text>
+<text x="908" y="280" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="654.4" y="268" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="667.4" y="279" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="621" y="288" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="288" x2="920" y2="288" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="306" font-size="13" fill="#1f2937">pet_name</text>
+<text x="908" y="306" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<line x1="620" y1="314" x2="920" y2="314" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="332" font-size="13" fill="#1f2937">service_name</text>
+<text x="908" y="332" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(30)</text>
+<rect x="621" y="340" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="340" x2="920" y2="340" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="358" font-size="13" fill="#1f2937">username</text>
+<text x="908" y="358" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(20)</text>
+<line x1="620" y1="366" x2="920" y2="366" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="384" font-size="13" fill="#1f2937">status</text>
+<text x="908" y="384" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(10)</text>
+<rect x="623" y="437" width="300" height="142" rx="10" fill="#e3e9f0"/>
+<rect x="620" y="434" width="300" height="142" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="620" y="434" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="620" y="462" width="300" height="10" fill="#547899"/>
+<text x="634" y="459" font-size="15" font-weight="700" fill="#ffffff">notice　公告表</text>
+<line x1="620" y1="472" x2="920" y2="472" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="490" font-size="13" fill="#1f2937">id</text>
+<text x="908" y="490" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="654.4" y="478" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="667.4" y="489" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="621" y="498" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="498" x2="920" y2="498" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="516" font-size="13" fill="#1f2937">title</text>
+<text x="908" y="516" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(50)</text>
+<line x1="620" y1="524" x2="920" y2="524" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="542" font-size="13" fill="#1f2937">content</text>
+<text x="908" y="542" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(500)</text>
+<rect x="621" y="550" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="550" x2="920" y2="550" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="568" font-size="13" fill="#1f2937">create_time</text>
+<text x="908" y="568" font-size="12" text-anchor="end" fill="#8a94a6">DATETIME</text>
+<rect x="623" y="621" width="300" height="142" rx="10" fill="#e3e9f0"/>
+<rect x="620" y="618" width="300" height="142" rx="10" fill="#ffffff" stroke="#c3cede" stroke-width="1"/>
+<rect x="620" y="618" width="300" height="38" rx="10" fill="#547899"/>
+<rect x="620" y="646" width="300" height="10" fill="#547899"/>
+<text x="634" y="643" font-size="15" font-weight="700" fill="#ffffff">message　留言表</text>
+<line x1="620" y1="656" x2="920" y2="656" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="674" font-size="13" fill="#1f2937">id</text>
+<text x="908" y="674" font-size="12" text-anchor="end" fill="#8a94a6">INT</text>
+<rect x="654.4" y="662" width="26" height="15" rx="4" fill="#2c4763"/>
+<text x="667.4" y="673" font-size="10" text-anchor="middle" fill="#ffffff">PK</text>
+<rect x="621" y="682" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="682" x2="920" y2="682" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="700" font-size="13" fill="#1f2937">username</text>
+<text x="908" y="700" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(50)</text>
+<line x1="620" y1="708" x2="920" y2="708" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="726" font-size="13" fill="#1f2937">content</text>
+<text x="908" y="726" font-size="12" text-anchor="end" fill="#8a94a6">VARCHAR(300)</text>
+<rect x="621" y="734" width="298" height="26" fill="#f2f6fa"/>
+<line x1="620" y1="734" x2="920" y2="734" stroke="#e3e9f0" stroke-width="1"/>
+<text x="632" y="752" font-size="13" fill="#1f2937">create_time</text>
+<text x="908" y="752" font-size="12" text-anchor="end" fill="#8a94a6">DATETIME</text>
+</svg>
+<div style="font-size:12px;color:#8a94a6;margin-top:6px;">说明：reserve / notice / message 为业务简化表，未建外键；实际外键仅 owner.user_id→user.user_id（1:1）、pet.owner_id→owner.owner_id（1:n）。</div>
+</div>
+</html>

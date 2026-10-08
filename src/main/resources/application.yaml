@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 本地默认连 127.0.0.1；云端部署时通过环境变量 DB_URL/DB_USERNAME/DB_PASSWORD 覆盖
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/pet_manage?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+  # ===================== Spring AI 配置 =====================
+  # 使用 OpenAI 兼容协议接入大模型：
+  #  - 有 API Key 时：把环境变量 AI_API_KEY 设为你的 Key（火山方舟/豆包等 OpenAI 兼容接口均可）
+  #  - 没有 Key 时：系统自动使用本地模拟回答（fallback），功能演示不受影响
+  ai:
+    model:
+      chat: openai                      # 默认对话模型提供方：openai 兼容接口
+    openai:
+      base-url: https://ark.cn-beijing.volces.com/api/v3   # 火山方舟（豆包）OpenAI 兼容地址
+      api-key: ${AI_API_KEY:sk-placeholder}                # 环境变量 AI_API_KEY，缺省用占位
+      chat:
+        options:
+          model: doubao-seed-1-6-250615 # 豆包 Seed 对话模型
+
+mybatis:
+  # 注解式 Mapper 无需 XML；如后续新增 XML，放在 com/example/mapper 下
+  mapper-locations: classpath:com/example/mapper/*.xml
+  type-aliases-package: com.example.demo.bean
+  configuration:
+    # 开启下划线自动转驼峰（如 user_id -> userId）
+    map-underscore-to-camel-case: true
+
+server:
+  # 本地默认 8081；云端（Render 等）通过环境变量 PORT 指定
+  port: ${PORT:8081}
+
